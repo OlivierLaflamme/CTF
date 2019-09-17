@@ -1,4 +1,4 @@
-# CTF Writeups Of Challs I Solved 
+# 💻 CTF Writeups Of Challs I Solved 💻
 I pretty much only solve Stego and Pwn (^:
 
 ## 2019
