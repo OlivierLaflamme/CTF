@@ -16,16 +16,16 @@ Get a GREP #1!					|General	   |125		  |nactf{r3gul4r_3xpr3ss10ns_ar3_m0r3_th4n_
 
 ## Least Significant Avenger  
 Title suggests LSB so lets zsteg to see  
-![](https://github.com/ScripTeaseCTF/CTF/blob/master/WhaleCTF/images/avenger.PNG)   
+![](https://github.com/OlivierLaflamme/CTF/tree/master/NewarkAcademyCTF2019/images/avenger.PNG)   
 nactf{h4wk3y3_15_th3_l34st_51gn1f1c4nt_b1t}  
 
 ## The Meta Meme
 Its a pdf and the title suggests metadata sooo...  
-![](https://github.com/ScripTeaseCTF/CTF/blob/master/WhaleCTF/images/meta.PNG)  
+![](https://github.com/OlivierLaflamme/CTF/tree/master/NewarkAcademyCTF2019/images/meta.PNG)  
 nactf{d4mn_th15_1s_s0_m3t4}  
 
 ## Unzip Me 
-![](https://github.com/ScripTeaseCTF/CTF/blob/master/WhaleCTF/images/unzipme.PNG)  
+![](https://github.com/OlivierLaflamme/CTF/tree/master/NewarkAcademyCTF2019/images/unzipme.PNG)  
 zip1.zip had: nactf{w0w  
 zip2.zip had: _y0u_unz1pp  
 zip3.zip had: 3d_m3}  
@@ -33,7 +33,7 @@ Together they make nactf{w0w_y0u_unz1pp3d_m3}
 
 ## Kellen's Broken File  
 So this file wasnt broken for me at all i could open it and read the flag 
-![](https://github.com/ScripTeaseCTF/CTF/blob/master/WhaleCTF/images/kellens.PNG)   
+![](https://github.com/OlivierLaflamme/CTF/tree/master/NewarkAcademyCTF2019/images/kellens.PNG)   
 but im assuming i'd have had to do something like   
 pdftocairo -pdf Kellens_broken_file.pdf KellensFixed.pdf   ???? 
 meh who cares   
