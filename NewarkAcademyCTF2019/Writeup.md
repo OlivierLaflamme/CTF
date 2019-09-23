@@ -16,7 +16,7 @@ Get a GREP #1!					|General	   |125		  |nactf{r3gul4r_3xpr3ss10ns_ar3_m0r3_th4n_
 
 ## Least Significant Avenger  
 Title suggests LSB so lets zsteg to see  
-![](https://github.com/ScripTeaseCTF/CTF/blob/master/NewarkAcademyCTF2019/images/avenger.PNG)   
+![](https://github.com/OlivierLaflamme/CTF/blob/master/NewarkAcademyCTF2019/images/avenger.PNG)   
 nactf{h4wk3y3_15_th3_l34st_51gn1f1c4nt_b1t}  
 
 ## The Meta Meme
