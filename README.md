@@ -1,5 +1,5 @@
 # 💻 CTF Writeups - Challs I Solved 💻
-I pretty much only solve Stego and Pwn (^:
+I pretty much only solve Stego and Pwn but check them out!(^:
 
 ## 2019
 - [PicoCTF 2019](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/Writeup.md)
