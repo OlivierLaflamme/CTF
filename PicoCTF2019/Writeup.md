@@ -32,7 +32,7 @@ Irish-Name-Repo 3	      		|Web	       |400		  |picoCTF{3v3n_m0r3_SQL_ef7eac2f}
 
 
 All things considered I got 8801 in a little less then 3 days so I sticked to what i was comfortable   
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/score.PNG)  
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/score.PNG)  
 ## unzip (Forensics/50)
 unzip the image and open it in 29a.ch  
 https://29a.ch/photo-forensics/#forensic-magnifier  
