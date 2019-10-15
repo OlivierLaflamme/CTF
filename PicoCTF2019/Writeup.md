@@ -137,7 +137,7 @@ After that, if you rearrange the character strings at the end of the original im
 picoCTF{An0tha_1_54503d8}  
 
 ## c0rrupt  (Forensics 250)
-Open it with a binary editor and modify the following items
+Open it with a binary editor and modify the following items   
 00000000  89 65 4e 34 0d 0a b0 aa 00 00 00 0d 43 22 44 52  |.eN4..°ª....C"DR|  
 ?  
 00000000  89 50 4e 47 0d 0a 1a 0a 00 00 00 0d 49 48 44 52  |.PNG........IHDR|  
