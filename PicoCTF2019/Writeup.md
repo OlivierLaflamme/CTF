@@ -37,7 +37,7 @@ All things considered I got 8801 in a little less then 3 days so I sticked to wh
 unzip the image and open it in 29a.ch  
 https://29a.ch/photo-forensics/#forensic-magnifier  
 voila~!     
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/unzip.PNG)  
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/unzip.PNG)  
 picoCTF{unz1pp1ng_1s_3a5y}  
 
 ## Glory of the Garden (Forensics/50)   
@@ -50,18 +50,18 @@ picoCTF{s0_m3ta_7ce44fc5}
   
 ## What Lies Within (Forensics/150)  
 use zsteg to find a decoding   
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/whatlieswithin.PNG)   
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/whatlieswithin.PNG)   
 picoCTF{h1d1ng_1n_th3_b1t5}     
 
 ## Extensions (Forensics/150)   
 open the file looks like a png and its not currupted, so rename and open   
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/extensions.PNG)    
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/extensions.PNG)    
 picoCTF{now_you_know_about_extensions}  
 
 ## like 1000 (Forensics/250)
 I really wanted to get the 1st blood for this so i didnt write a bash script i simply used an autoclicker and took 20 seconds   
 but i know i should have used something like the well known 'extractnested.py' script pip install nested.tar.archives.extractor==1.1    
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/like1000.PNG)    
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/like1000.PNG)    
 picoCTF{l0t5_0f_TAR5}   
 
 ## shark on wire 1 (Forensics/150)
@@ -74,7 +74,7 @@ It seems to be an audio file called SSTV (Slow Scan TV) used in amateur radio im
 It seems that Luna 3 ( the unmanned lunar explorer in the Soviet Union ) also used SSTV to transmit images.  
 The following tools were used to decode audio into images.  
 http://users.belgacom.net/hamradio/rxsstv.htm   
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/moon0.PNG) 
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/moon0.PNG) 
 When `Scottie 1` recording with RX option , the following image was output.  
 The image quality will be rough unless the environment is capable of recording with clear noise and clear sound      
 flag = picoCTF{beep_boop_im_in_space}   
@@ -82,13 +82,13 @@ flag = picoCTF{beep_boop_im_in_space}
 ## m00nwalk2 (Forensics 300)
 It looks like an audio file in a format called SSTV. This time, RX-SSTV was used for decoding.   
 we'll be using http://users.belgacom.net/hamradio/rxsstv.htm   
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/moon1.PNG)      
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/images/moon1.PNG)      
 `message.wav` When decoding, it became as follows. It looks like the same image as the previous m00nwalk.   
 Next `clue1.wav`, when it was decoded using RX-SSTV, it became as follows.    
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/moon2.PNG)    
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/moon2.PNG)    
 This image had a password ( hidden_stegosaurus) written on it. `message.wav` It seems that another data is hidden by steganography .    
 Besides, `clue2.wav` killing `clue3.wav` also tried to decode, I did not know what it means. 
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/moon3.PNG)      
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/moon3.PNG)      
 hidden_stegosaurusI found out that the password was , so I tried extracting data with steghide as a test. Then the flag was obtained.   
 ```bash 
 $ steghide extract -sf message.wav -p hidden_stegosaurus -xf output.txt  
@@ -98,7 +98,7 @@ picoCTF{the_answer_lies_hidden_in_plain_sight}
 ```
 
 ## shark on wire 2 (Forensics 300)   
-![](https://github.com/OlivierLaflamme/CTF/blob/master/picoCTF2019/images/shark.PNG)   
+![](https://github.com/OlivierLaflamme/CTF/blob/master/PicoCTF2019/images/shark.PNG)   
 When I looked at the packet with Wireshark , I was able to confirm the start and end strings on port 22.   
 udp.port == 22 After filtering and observing, it was found that only the source port number and checksum changed in each packet     
 Looking at the source port number, I noticed that the source port number of the next packet that had a start `5112` is `p` the ASCII  
