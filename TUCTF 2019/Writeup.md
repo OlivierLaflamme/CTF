@@ -146,7 +146,7 @@ output:
 \x07�Ub)\x0b\xb7\xb6\x03y\xbe\xac\x1d7\x7f\x97\xfe
 ```    
 exploit:   
-```
+```python
 #include <stdio.h>
 #include <stdlib.h>
 
