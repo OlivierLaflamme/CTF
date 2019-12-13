@@ -13,7 +13,7 @@ printfun				  | Pwn
 pancakes				  | Pwn
 
 # Crypto Infinit (crypto)    
-
+@Corb3nik for the solution and code 
 ```python 
 #!/usr/bin/env python2
 ​
