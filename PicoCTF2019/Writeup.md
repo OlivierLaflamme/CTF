@@ -1,4 +1,4 @@
-# BlueWhale CTF
+# PicoCTF
 
 
 Title                         	| Category     | Points   | Flag
