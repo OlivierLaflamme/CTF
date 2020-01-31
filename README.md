@@ -12,6 +12,4 @@ I pretty much only solve Stego and Pwn but check them out!(^:
 ## 2018
 - [otwadvent2018](https://github.com/OlivierLaflamme/CTF/blob/master/otwadvent2018/Writeup.md)
 
----
 
-## CTF-RootMe
