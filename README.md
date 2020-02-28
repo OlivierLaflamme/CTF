@@ -1,6 +1,6 @@
 # 💻 CTF Writeups - Challs I Solved 💻
 I pretty much only solve Stego and Pwn but check them out!(^:
-<img src="https://www.hackthebox.eu/badge/image/37879" alt="Hack The Box">
+
 ## 2019 
 - [justCTF2019](https://github.com/OlivierLaflamme/CTF/blob/master/JustCTF2019/Readme.md)
 - [otwadvent2019]()
